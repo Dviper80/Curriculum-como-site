@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Daniel Enrique Molina Sanglade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0F4C81; /* Azul tecnológico clásico */
+            --secondary-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #6c757d;
+            --badge-bg: #e2e8f0;
+            --badge-text: #1a202c;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Cabecera */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .photo-placeholder {
+            width: 130px;
+            height: 130px;
+            background-color: #f1f5f9;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            border: 2px dashed #cbd5e1;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--secondary-color);
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Secciones */
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 35px;
+            font-size: 1.4em;
+            display: inline-block;
+        }
+
+        .section-content {
+            margin-top: 15px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        /* Educación */
+        .item {
+            margin-bottom: 20px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+        }
+
+        .item-meta {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* Habilidades (Badges) */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-badge {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 6px 14px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Grid para Habilidades Transversales e Idiomas */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .cv-container {
+                padding: 30px;
+            }
+            .item-header {
+                flex-direction: column;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <header>
+            <div class="photo-placeholder">
+                <i class="fa-solid fa-camera fa-2x"></i><br>
+                <span>[Foto Aquí]</span>
+            </div>
+            <h1>Daniel Enrique Molina Sanglade</h1>
+            <div class="subtitle">Estudiante de Ingeniería Informática (Computer Science)</div>
+            
+            <div class="contact-info">
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Sevilla, España</a>
+                <a href="mailto:tuemail@ejemplo.com"><i class="fa-solid fa-envelope"></i> tuemail@ejemplo.com</a>
+                <a href="tel:+34123456789"><i class="fa-solid fa-phone"></i> +34 123 456 789</a>
+                <a href="https://linkedin.com/in/tuperfil" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/tuusuario" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+        </header>
+
+        <section>
+            <h2><i class="fa-solid fa-user-astronaut"></i> Sobre Mí</h2>
+            <div class="section-content">
+                <p>Estudiante de Ingeniería Informática con un expediente académico sobresaliente y una profunda vocación por el aprendizaje autónomo y la resolución de problemas técnicos complejos en tiempo real. Mi experiencia internacional en Polonia me ha dotado de una gran capacidad de adaptación y facilidad para establecer relaciones en entornos multiculturales. Busco mi primera oportunidad profesional en el sector tecnológico para aportar mi sólida base técnica, mi responsabilidad y mi entusiasmo por dominar nuevas herramientas de software.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-graduation-cap"></i> Educación</h2>
+            
+            <div class="section-content">
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Grado en Ingeniería Informática (Computer Science)</span>
+                        <span class="item-meta">2023 – 2027</span>
+                    </div>
+                    <div><strong>Universidad de Sevilla</strong> | España</div>
+                    <ul>
+                        <li>Numerosas <strong>Matrículas de Honor</strong> a lo largo de la carrera.</li>
+                        <li>Fuerte base teórica y práctica en desarrollo de software, diseño de bases de datos y arquitectura de sistemas.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Programa de Intercambio Universitario</span>
+                        <span class="item-meta">Curso 2025 – 2026</span>
+                    </div>
+                    <div><strong>AGH University of Science and Technology</strong> | Cracovia, Polonia</div>
+                    <ul>
+                        <li>Iniciativa personal motivada por el deseo de salir de mi zona de confort y expandir mi red de contactos internacional.</li>
+                        <li>Desarrollo de resiliencia y adaptabilidad en un entorno académico extranjero.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-laptop-code"></i> Habilidades Técnicas</h2>
+            <div class="section-content">
+                <p><strong>Lenguajes y Herramientas:</strong></p>
+                <div class="skills-container">
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">Java</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">R</span>
+                    <span class="skill-badge">Scala</span>
+                    <span class="skill-badge">MATLAB</span>
+                    <span class="skill-badge">Verilog</span>
+                    <span class="skill-badge">UNIX / LINUX</span>
+                </div>
+                
+                <p style="margin-top: 15px;"><strong>Áreas de Exploración Autónoma:</strong></p>
+                <ul>
+                    <li><strong>Inteligencia Artificial:</strong> Arquitectura de IA, optimización de redes neuronales, PyTorch, Edge AI.</li>
+                    <li><strong>Ciberseguridad:</strong> Análisis de vulnerabilidades, simulación de redes y laboratorios virtuales (Kali Linux).</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="grid-2">
+            <section>
+                <h2><i class="fa-solid fa-bolt"></i> Soft Skills</h2>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Resolución de problemas:</strong> Capacidad para analizar errores y encontrar soluciones ágiles bajo presión.</li>
+                        <li><strong>Aprendizaje autónomo:</strong> Actitud proactiva para estudiar y dominar tecnologías por mi cuenta.</li>
+                        <li><strong>Responsabilidad:</strong> Enfoque metódico hacia el estudio, proyectos y cumplimiento de objetivos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2><i class="fa-solid fa-earth-americas"></i> Idiomas</h2>
+                <div class="section-content">
+                    <div class="item" style="margin-bottom: 10px;">
+                        <span class="item-title">Español</span>
+                        <div>Nativo</div>
+                    </div>
+                    <div class="item" style="margin-bottom: 10px;">
+                        <span class="item-title">Inglés - Nivel C1</span>
+                        <div class="item-meta">Certificado por Cambridge</div>
+                    </div>
+                    <div class="item">
+                        <span class="item-title">Polaco - Nivel A1</span>
+                        <div class="item-meta">Certificado por la Univ. AGH de Cracovia</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</body>
+</html>
