@@ -4,28 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Daniel Enrique Molina Sanglade</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #0F4C81; /* Azul tecnológico clásico */
-            --secondary-color: #2c3e50;
-            --bg-color: #f8f9fa;
+            /* Nueva paleta: Mezcla de Azul Mate y Rojo Mate */
+            --red-matte: #A93226; /* Rojo mate arcilla/ladrillo */
+            --red-light: #F9EBEA; /* Fondo rojo muy suave */
+            
+            --blue-matte: #2C3E50; /* Azul pizarra oscuro mate */
+            --blue-light: #EAECEE; /* Fondo azul muy suave */
+            
+            --bg-color: #f4f5f7; 
             --card-bg: #ffffff;
             --text-main: #333333;
-            --text-muted: #6c757d;
-            --badge-bg: #e2e8f0;
-            --badge-text: #1a202c;
+            --text-muted: #5D6D7E; /* Gris azulado para textos secundarios */
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
+            background-image: radial-gradient(var(--blue-light) 1px, transparent 1px);
+            background-size: 30px 30px;
             color: var(--text-main);
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
         }
@@ -34,155 +43,269 @@
             max-width: 850px;
             width: 100%;
             background: var(--card-bg);
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 55px 65px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(44, 62, 80, 0.05), 0 5px 15px rgba(44, 62, 80, 0.03);
+            /* Mezcla de colores en el borde superior */
+            border-top: 6px solid;
+            border-image: linear-gradient(to right, var(--blue-matte), var(--red-matte)) 1;
+            position: relative;
         }
 
         /* Cabecera */
         header {
             text-align: center;
-            border-bottom: 2px solid #edf2f7;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
+            border-bottom: 2px solid var(--blue-light);
+            padding-bottom: 35px;
+            margin-bottom: 35px;
         }
 
         .photo-placeholder {
-            width: 130px;
-            height: 130px;
-            background-color: #f1f5f9;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px auto;
             border-radius: 50%;
-            margin: 0 auto 20px auto;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 0 0 3px var(--blue-matte), 0 10px 25px rgba(169, 50, 38, 0.15);
+            padding: 3px;
+            background-color: var(--red-light);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9em;
-            border: 2px dashed #cbd5e1;
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.05) translateY(-5px);
         }
 
         h1 {
             margin: 0;
-            color: var(--secondary-color);
+            color: var(--blue-matte);
             font-size: 2.5em;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
         .subtitle {
-            font-size: 1.2em;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-top: 8px;
+            font-size: 1.1em;
+            color: var(--red-matte);
+            font-weight: 700;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
         }
 
+        /* Información de contacto */
         .contact-info {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .contact-info a {
             text-decoration: none;
             color: var(--text-muted);
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             font-size: 0.95em;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background-color: #f8f9fa;
+            border: 1px solid transparent;
+        }
+
+        .contact-info a i {
+            color: var(--blue-matte);
+            font-size: 1.1em;
+            line-height: 1; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
         }
 
         .contact-info a:hover {
-            color: var(--primary-color);
+            background-color: var(--red-light);
+            color: var(--red-matte);
+            border-color: rgba(169, 50, 38, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .contact-info a:hover i {
+            color: var(--red-matte);
         }
 
-        /* Secciones */
+        /* Secciones y Títulos */
         h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 8px;
-            margin-top: 35px;
-            font-size: 1.4em;
-            display: inline-block;
+            color: var(--blue-matte);
+            margin-top: 45px;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
 
-        .section-content {
-            margin-top: 15px;
+        h2 i {
+            color: var(--red-matte);
+            background-color: var(--red-light);
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            font-size: 20px;
+            flex-shrink: 0;
+            /* Centrado absoluto asegurado */
+            display: grid !important;
+            place-items: center;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1 !important;
         }
 
         p {
             text-align: justify;
+            color: var(--text-muted);
         }
 
-        /* Educación */
+        /* Timeline: Estructura Azul, Puntos Rojos */
         .item {
-            margin-bottom: 20px;
+            margin-bottom: 28px;
+            position: relative;
+            padding-left: 22px;
+            border-left: 3px solid var(--blue-light);
+            transition: border-color 0.3s ease;
         }
-        
+
+        .item:hover {
+            border-left-color: var(--blue-matte);
+        }
+
+        .item::before {
+            content: '';
+            position: absolute;
+            /* Centrado matemático perfecto de la esfera */
+            left: -1.5px; 
+            transform: translateX(-50%);
+            top: 0px; 
+            width: 14px;
+            height: 14px;
+            background-color: var(--card-bg);
+            border: 3px solid var(--red-matte);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-sizing: border-box; 
+        }
+
+        .item:hover::before {
+            background-color: var(--red-matte);
+            box-shadow: 0 0 0 4px var(--red-light);
+        }
+
         .item-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px;
+            align-items: center;
+            margin-bottom: 6px;
         }
 
         .item-title {
             font-weight: 700;
-            color: var(--secondary-color);
-            font-size: 1.1em;
+            color: var(--blue-matte);
+            font-size: 1.15em;
+            line-height: 1.3;
         }
 
         .item-meta {
-            font-style: italic;
-            color: var(--text-muted);
-            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--red-matte);
+            background-color: var(--red-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            white-space: nowrap; 
         }
 
         ul {
-            margin-top: 8px;
-            padding-left: 20px;
+            margin-top: 10px;
+            padding-left: 18px;
+            color: var(--text-muted);
         }
 
         li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        /* Habilidades (Badges) */
+        /* Habilidades (Badges interactivos) */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .skill-badge {
-            background-color: var(--badge-bg);
-            color: var(--badge-text);
-            padding: 6px 14px;
-            border-radius: 25px;
+            background-color: var(--card-bg);
+            color: var(--blue-matte);
+            padding: 8px 16px;
+            border-radius: 8px;
             font-size: 0.9em;
             font-weight: 600;
-            border: 1px solid #cbd5e1;
+            border: 1px solid var(--blue-light);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .skill-badge i {
+            font-size: 1.1em;
+            color: var(--red-matte);
+            line-height: 1;
+            transition: color 0.3s ease;
         }
 
-        /* Grid para Habilidades Transversales e Idiomas */
+        .skill-badge:hover {
+            background-color: var(--blue-matte);
+            color: #ffffff;
+            border-color: var(--blue-matte);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(44, 62, 80, 0.15);
+        }
+        
+        .skill-badge:hover i {
+            color: #ffffff;
+        }
+
+        /* Grid a dos columnas */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 35px;
+            margin-top: 25px;
         }
 
-        @media (max-width: 600px) {
+        /* Responsividad */
+        @media (max-width: 768px) {
             .cv-container {
-                padding: 30px;
+                padding: 40px 25px;
             }
             .item-header {
                 flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
             }
             .grid-2 {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
     </style>
@@ -196,7 +319,7 @@
                 <img src="mi-foto.png" alt="Daniel Enrique Molina Sanglade" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
             </div>
             <h1>Daniel Enrique Molina Sanglade</h1>
-            <div class="subtitle">Estudiante de Ingeniería Informática (Tecnología Informática)</div>
+            <div class="subtitle">Estudiante de Ingeniería Informática</div>
             
             <div class="contact-info">
                 <a href="#"><i class="fa-solid fa-location-dot"></i> Sevilla, España</a>
@@ -208,7 +331,7 @@
         </header>
 
         <section>
-            <h2><i class="fa-solid fa-user-astronaut"></i> Sobre Mí</h2>
+            <h2><i class="fa-solid fa-rocket"></i> Sobre Mí</h2>
             <div class="section-content">
                 <p>Estudiante de Ingeniería Informática con un expediente académico sobresaliente y una profunda vocación por el aprendizaje autónomo y la resolución de problemas técnicos complejos en tiempo real. Mi experiencia internacional en Polonia me ha dotado de una gran capacidad de adaptación y facilidad para establecer relaciones en entornos multiculturales. Busco mi primera oportunidad profesional en el sector tecnológico para aportar mi sólida base técnica, mi responsabilidad y mi entusiasmo por dominar nuevas herramientas de software.</p>
             </div>
@@ -245,25 +368,32 @@
         </section>
 
         <section>
-            <h2><i class="fa-solid fa-laptop-code"></i> Habilidades Técnicas</h2>
+            <h2><i class="fa-solid fa-code"></i> Habilidades Técnicas</h2>
             <div class="section-content">
-                <p><strong>Lenguajes y Herramientas:</strong></p>
+                <p style="color: var(--blue-matte); font-weight: 600;">Lenguajes y Herramientas Principales:</p>
                 <div class="skills-container">
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">Java</span>
-                    <span class="skill-badge">MySQL</span>
-                    <span class="skill-badge">R</span>
-                    <span class="skill-badge">Scala</span>
-                    <span class="skill-badge">MATLAB</span>
-                    <span class="skill-badge">Verilog</span>
-                    <span class="skill-badge">UNIX / LINUX</span>
+                    <span class="skill-badge"><i class="fa-brands fa-python"></i> Python</span>
+                    <span class="skill-badge"><i class="fa-brands fa-java"></i> Java</span>
+                    <span class="skill-badge"><i class="fa-solid fa-database"></i> MySQL</span>
+                    <span class="skill-badge"><i class="fa-solid fa-chart-line"></i> R</span>
+                    <span class="skill-badge"><i class="fa-solid fa-code"></i> Scala</span>
+                    <span class="skill-badge"><i class="fa-solid fa-microchip"></i> MATLAB / Verilog</span>
+                    <span class="skill-badge"><i class="fa-brands fa-linux"></i> UNIX / LINUX</span>
                 </div>
                 
-                <p style="margin-top: 15px;"><strong>Áreas de Exploración Autónoma:</strong></p>
-                <ul>
-                    <li><strong>Inteligencia Artificial:</strong> Arquitectura de IA, optimización de redes neuronales, PyTorch, Edge AI.</li>
-                    <li><strong>Ciberseguridad:</strong> Análisis de vulnerabilidades, simulación de redes y laboratorios virtuales (Kali Linux).</li>
-                </ul>
+                <p style="color: var(--blue-matte); font-weight: 600; margin-top: 30px;">Áreas de Exploración Autónoma:</p>
+                <div class="item" style="margin-bottom: 20px;">
+                    <div class="item-header"><span class="item-title" style="font-size: 1.05em;">Inteligencia Artificial</span></div>
+                    <ul>
+                        <li>Arquitectura de IA, optimización de redes neuronales, PyTorch, Edge AI.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="item-header"><span class="item-title" style="font-size: 1.05em;">Ciberseguridad</span></div>
+                    <ul>
+                        <li>Análisis de vulnerabilidades, simulación de redes y laboratorios virtuales (Kali Linux).</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -271,28 +401,39 @@
             <section>
                 <h2><i class="fa-solid fa-bolt"></i> Soft Skills</h2>
                 <div class="section-content">
-                    <ul>
-                        <li><strong>Resolución de problemas:</strong> Capacidad para analizar errores y encontrar soluciones ágiles bajo presión.</li>
-                        <li><strong>Aprendizaje autónomo:</strong> Actitud proactiva para estudiar y dominar tecnologías por mi cuenta.</li>
-                        <li><strong>Responsabilidad:</strong> Enfoque metódico hacia el estudio, proyectos y cumplimiento de objetivos.</li>
-                    </ul>
+                    <div class="item">
+                        <div class="item-header"><span class="item-title" style="font-size: 1em;">Resolución de problemas</span></div>
+                        <p style="font-size: 0.9em; margin-top: 5px;">Capacidad para analizar errores y encontrar soluciones ágiles bajo presión.</p>
+                    </div>
+                    <div class="item">
+                        <div class="item-header"><span class="item-title" style="font-size: 1em;">Aprendizaje autónomo</span></div>
+                        <p style="font-size: 0.9em; margin-top: 5px;">Actitud proactiva para estudiar y dominar tecnologías de forma autodidacta.</p>
+                    </div>
                 </div>
             </section>
 
             <section>
                 <h2><i class="fa-solid fa-earth-americas"></i> Idiomas</h2>
                 <div class="section-content">
-                    <div class="item" style="margin-bottom: 10px;">
-                        <span class="item-title">Español</span>
-                        <div>Nativo</div>
-                    </div>
-                    <div class="item" style="margin-bottom: 10px;">
-                        <span class="item-title">Inglés - Nivel C1</span>
-                        <div class="item-meta">Certificado por Cambridge</div>
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title" style="font-size: 1em;">Español</span>
+                            <span class="item-meta" style="background-color: transparent; border: 1px solid var(--red-matte); color: var(--red-matte);">Nativo</span>
+                        </div>
                     </div>
                     <div class="item">
-                        <span class="item-title">Polaco - Nivel A1</span>
-                        <div class="item-meta">Certificado por la Univ. AGH de Cracovia</div>
+                        <div class="item-header">
+                            <span class="item-title" style="font-size: 1em;">Inglés</span>
+                            <span class="item-meta">C1 Avanzado</span>
+                        </div>
+                        <p style="font-size: 0.85em; margin-top: 5px; margin-bottom: 0;">Certificado por Cambridge</p>
+                    </div>
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title" style="font-size: 1em;">Polaco</span>
+                            <span class="item-meta">A1 Básico</span>
+                        </div>
+                        <p style="font-size: 0.85em; margin-top: 5px; margin-bottom: 0;">Cert. Univ. AGH de Cracovia</p>
                     </div>
                 </div>
             </section>
